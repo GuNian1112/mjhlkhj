@@ -128,8 +128,15 @@ def send_message(to_user, access_token, region_name, weather, temp, wind_dir, no
     love_month = int(config["love_date"].split("-")[1])
     love_day = int(config["love_date"].split("-")[2])
     love_date = date(love_year, love_month, love_day)
+    #获取相识的日期格式
+    acquaint_year = int(config["acquaint_date"].split("-")[0])
+    acquaint_month = int(config["acquaint_date"].split("-")[1])
+    acquaint_day = int(config["acquaint_date"].split("-")[2])
+    acquaint_date = date(acquaint_year, acquaint_month, acquaint_day)
     # 获取在一起的日期差
     love_days = str(today.__sub__(love_date)).split(" ")[0]
+    #获取相识的时间差
+    acquaint_days = str(today.__sub__(acquaint_days)).split(" ")[0]
     # 获取所有生日数据
     birthdays = {}
     for k, v in config.items():
